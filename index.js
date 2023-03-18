@@ -2,57 +2,40 @@ const { time, timeStamp } = require('console');
 const express = require('express')
 const app = express()
 const port = 3000
+const mustacheExpress = require('mustache-express');
+const fs = require('fs');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.set('views',  __dirname + "/views"); //Quel est le dossier dans lequel on range les views
+app.set('view engine', 'mustache'); // Variable de config.
+app.engine('mustache', mustacheExpress());// Quest-ce que Mustache ? => instance de mustacheExpress
+
 
 app.get('/', (req, res) => {
-    res.send('<a href="/ma-page">Accédez au formulaire ici </a>');
-})
+  const personnages = JSON.parse(fs.readFileSync('Marvel.json'));
+  const message = req.query.success === "1" ? "Votre personnage à été crée !" : ""
+  
+  res.render('index', { personnages, message});
+});
 
-app.get('/ma-page', (req, res) => {
-    res.send('Remplissez le formulaire ci-contre pour créer un fichier dans VSCode : <form action="/creer-fichier"><input type="text" name="mon_input"><input type="submit"></form>');
-})
+app.post('/', (req, res) => {
+  const personnages = JSON.parse(fs.readFileSync('Marvel.json'));
+  const nouveauPersonnage = {
+    nom: req.body.nom,
+    serie: req.body.serie,
+    image: req.body.image,
+    description: req.body.description
+  };
+  personnages.push(nouveauPersonnage);
+  fs.writeFileSync('Marvel.json', JSON.stringify(personnages, null, 4));
+  res.redirect('/?success=1');
+});
 
-app.get('/creer-fichier', (req, res) => {
-    const fs = require('fs');
-    const content = req.query.mon_input;
-    const dateObj  = new Date();
- 
-    let month = dateObj.getMonth();
-
-    // To make sure the month always has 2-character-format. For example, 1 => 01, 2 => 02
-    
-    let date = dateObj.getDate();
-
-    // To make sure the date always has 2-character-format
-    
-    let hour = dateObj.getHours();
-
-    // To make sure the hour always has 2-character-format
-    
-    let minute = dateObj.getMinutes();
-
-    // To make sure the minute always has 2-character-format
-    
-    let second = dateObj.getSeconds();
-
-    // To make sure the second always has 2-character-format
-    
-    const time = `${date} à ${hour}h${minute}min${second}sec`;
-    //new Date().toISOString().slice(0, 10);
-    
-
-    try {
-        fs.writeFileSync('fichiers_TXT/Test_du_' + time  + '.txt', content);
-        res.send("Fichier créé !");
-    } catch (err) {
-        console.error(err);
-        res.send("Echec de création du fichier.");
-    }
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`) 
 })
-
-
 
 
