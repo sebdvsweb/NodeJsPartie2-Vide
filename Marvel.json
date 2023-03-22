@@ -2,7 +2,7 @@
     {
         "nom": "Iron Man",
         "serie": "Iron Man",
-        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Ironman_%28circa_2018%29.png/220px-Ironman_%28circa_2018%29.png",
+        "image": "https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg",
         "description": "Iron Man est un super-héros de bande dessinée américaine créé en 1963 par Stan Lee, Larry Lieber, Don Heck et Jack Kirby. Il est apparu pour la première fois dans Tales of Suspense #39."
     },
     {
@@ -10,6 +10,23 @@
         "serie": "The Amazing Spider-Man",
         "image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/220px-Web_of_Spider-Man_Vol_1_129-1.png",
         "description": "Spider-Man est un super-héros de bande dessinée américaine créé en 1962 par Stan Lee et Steve Ditko. Il est apparu pour la première fois dans Amazing Fantasy #15."
+    },
+    {
+        "nom": "THOMAS",
+        "serie": "erf",
+        "image": "erfds",
+        "description": "aezrtyui"
+    },
+    {
+        "nom": "Garage404",
+        "serie": "rtgf",
+        "image": "erfds",
+        "description": "rdezs"
+    },
+    {
+        "nom": "Garage404",
+        "serie": "erf",
+        "image": "erfds",
+        "description": "qsdfg"
     }
-
 ]
