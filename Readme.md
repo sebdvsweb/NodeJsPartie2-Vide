@@ -54,4 +54,4 @@ Javascript
 
 Templating
 - Installation de pico CSS et perfectionnement de la page.
-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+- Lien : <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
