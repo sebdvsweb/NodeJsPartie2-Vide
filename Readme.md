@@ -2,7 +2,7 @@ Exercice 1
 
 Ce code crée une application Express simple qui utilise Mustache pour le rendu des vues et bodyParser pour lire les données POST des formulaires. La route GET pour la page d'accueil rend la vue 'mon-template' avec un objet contenant la propriété 'MyName' et la valeur "Maxime".
 
-- Création de "mon-template.mustache" dans lequel crée une base HTML avec un h1 contenant une variable "MyName".
+- Création de "mon-template.mustache" dans lequel créer une base HTML avec un h1 contenant une variable "MyName".
 - Création d'un index.Js contenant tous les parametres du moteur de views ainsi qu'une route Get définissant la variable "MyName"
 
 
@@ -19,7 +19,7 @@ Mustache
     - Image
     - Description
 
-- Création d'une liste des varaibles obtenues afin d'afficher le contenu de notre BDD Json.
+- Création d'une liste des variables obtenues afin d'afficher le contenu de notre BDD Json.
 
 
 JSON
@@ -43,8 +43,8 @@ JSON
 Javascript
 - Création de l'index.js avec tous les parametres et la cocnfiguration du moteur de views (n'hésitez pas à vous inspirer du premier exercice ! )
 
-    - Création de la 1ere route get affichant la page d'accueil contenant notre formulaire et notre liste de personnages.
-    - Création d'un message de succès si un personnage a été créé (if else une valuer success retournée lors de la validation du formulaire)
+    - Création de la 1ère route get affichant la page d'accueil contenant notre formulaire et notre liste de personnages.
+    - Création d'un message de succès si un personnage a été créé (if / else + une valeur success retournée lors de la validation du formulaire)
     
     - Création de la route post afin d'envoyer la "REQUEST" à notre base de données Json. 
     - Utilisation du .push pour valider l'envoi des données dans la "REQUEST".
@@ -54,3 +54,4 @@ Javascript
 
 Templating
 - Installation de pico CSS et perfectionnement de la page.
+- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
